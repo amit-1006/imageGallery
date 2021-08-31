@@ -1,0 +1,16 @@
+<div style="display:flex;justify-content:center;margin:4%">
+<div class="card col-md-4" style="width: 18rem;">
+   
+<div class="card-body" >
+<img src="<%=@url%>" class="card-img-top" alt="cardImage">
+ <h5 class="card-title" style="display:flex;justify-content:center;margin:5%"><%=@title%></h5>
+ <p class="card-text" style="display:flex;justify-content:center"><%=@description%></p>
+</div>
+</div>
+</div>
+
+
+<div style="display:flex;justify-content:center">
+<a href="/edit/<%=@image.id%>" class="btn btn-primary" style="margin:1%">Edit Image</a>
+<a href="/delete/<%=@image.id%>" class="btn btn-danger" data-method="delete" style="margin:1%">Delete Image</a>
+</div>

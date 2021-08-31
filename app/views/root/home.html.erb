@@ -1,0 +1,32 @@
+<%=render "header" %>
+
+<%if @images.blank?%>
+<h3 style="display:flex;justify-content:center;margin:10%">No items found!!</h3>
+<%end%>
+
+<%if !@images.blank? %>
+
+<div class="row" style="padding-left:10.5rem">
+<%@images.each do |image|%>
+    
+   
+    <div class="card col-md-4" style="width: 18rem;margin:2rem">
+   
+   <div class="card-body">
+   <img src="<%=image.url%>" class="card-img-top" alt="cardImage">
+   <h5 class="card-title" style="display:flex;justify-content:center;margin:5%"><%=image.title%></h5>
+    
+    <a href="/show/<%=image.id%>" class="btn btn-primary" style="display:flex;justify-content:center">View</a>
+  </div>
+  </div>
+
+    <%end%>
+    </div>
+ 
+    <div style="position:relative;bottom:0;margin-left:38%">
+    <%= will_paginate(@images, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
+    </div>
+
+
+<%end%>
+
